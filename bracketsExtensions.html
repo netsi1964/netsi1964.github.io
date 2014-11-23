@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<title>Netsi1964.github.io by netsi1964</title>
+	<link rel="stylesheet" href="stylesheets/styles.css">
+	<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="javascripts/respond.js"></script>
+	<!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<style>
+		#autosuggest {
+			width: 500px;
+		}
+		.autocomplete-suggestions {
+			background: rgba(240, 240, 240, 1);
+			color: black;
+			overflow: hidden;
+			border: solid 1px black;
+		}
+		.autocomplete-suggestion {
+			white-space: nowrap;
+			overflow: hidden;
+			padding: 5px 3px;
+		}
+		.autocomplete-selected {
+			background-color: rgba(255, 154, 0, .8);
+			color: #fff;
+		}
+		.autocomplete-suggestions strong {
+			font-weight: normal;
+			color: rgba(4, 4, 2, 1);
+			padding: 0 1px;
+		}
+		.autocomplete-group {
+			padding: 2px 5px;
+		}
+		.autocomplete-group strong {
+			display: block;
+			border-bottom: 1px dotted #000;
+		}
+		input,
+		input:active {
+			outline-width: 0;
+			border-width: 1px;
+			border-style: solid;
+			border-color: #777;
+			padding: 5px;
+			width: 100%;
+			height: 30px;
+			color: white;
+		}
+		input:focus {
+			background-color: rgba(0, 0, 0, .12);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="header">
+		<nav>
+			<li class="fork"><a href="https://github.com/netsi1964">View On GitHub</a>
+			</li>
+		</nav>
+	</div>
+	<!-- end header -->
+
+	<div class="wrapper">
+
+		<section>
+			<div id="title">
+				<h1>Netsi1964.github.io</h1>
+				<p>My github repositories</p>
+				<hr>
+				<span class="credits left">Project maintained by <a href="https://github.com/netsi1964">netsi1964</a></span>
+				<span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+			</div>
+
+			<h3>Find Adobe Brackets extensions</h3>
+
+			<p>Nothing really other than what is inside Brackets, just found it a fun task:
+				<br>List generated on <code>
+					<time>2014/11/23</time>
+					</code>
+			</p>
+
+			<div class="col-md-12">
+				<h3>Enter text to search in the <code class="extensions"></code> Brackets extension </h3>
+				<input id="autocomplete" type="text" placeholder="Enter text to find extension">
+			</div>
+			<div class="col-md-12 found">
+			</div>
+
+
+		</section>
+
+	</div>
+
+
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9729/jquery.autocomplete.js"></script>
+	<script src="javascripts/bracketsExtensions.js"></script>
+	<script>
+		$(function () {
+			$(".extensions").text(bracketsExtensions.length + " extensions");
+			$('#autocomplete').autocomplete({
+				lookup: bracketsExtensions,
+				maxHeight: 300,
+				onSelect: function (suggestion) {
+					$(".found").html("<h3>" + suggestion.value + "</h3><p>" + suggestion.desc + "</p><p>More info <a href=\"" + suggestion.data + "\">" + suggestion.data + "</a></p>");
+				}
+			}) //.trigger("focus");
+		})
+	</script>
+
+	<!--[if !IE]><script>fixScale(document);</script><![endif]-->
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-43704370-1");
+			pageTracker._trackPageview();
+		} catch (err) {}
+	</script>
+
+</body>
+
+</html>
